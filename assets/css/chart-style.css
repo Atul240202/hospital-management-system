@@ -1,0 +1,11 @@
+.graph-container {
+  display: flex;
+  justify-content: space-around;
+}
+
+canvas {
+  max-width: 45%;
+  height: 80%;
+  margin: 10px;
+  border: 2px solid black;
+}

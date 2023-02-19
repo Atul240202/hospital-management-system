@@ -1,0 +1,202 @@
+/* Global styles */
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'sans-serif', 'Roboto';
+}
+
+header {
+  background-color: #add8e6;
+  color: #ffffff;
+  display: flex;
+  align-items: center;
+  padding: 10px;
+}
+
+.header-logo {
+  width: 60px;
+  height: 60px;
+  margin-right: 10px;
+}
+
+.header-text {
+  flex: 1;
+}
+
+h1,
+h2 {
+  margin: 0;
+}
+
+.header-tagline {
+  font-size: 1.2em;
+}
+
+.dashboard-container {
+  display: flex;
+}
+
+.sidebar {
+  width: 15%;
+  background-color: #f1f1f1;
+  height: 100vh;
+  padding: 20px;
+}
+
+.sidebar ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.sidebar li {
+  margin: 10px 0;
+}
+
+.sidebar a {
+  text-decoration: none;
+  color: #000000;
+  font-weight: bold;
+}
+
+/* Patient Details Form Styling */
+.patient-details {
+  width: 80%;
+  margin: 0 auto;
+  padding: 20px;
+  box-sizing: border-box;
+  float: right;
+}
+
+.patient-details h2 {
+  margin-bottom: 20px;
+}
+
+.patient-details label {
+  display: inline-block;
+  width: 40%;
+  margin-top: 0;
+  margin-bottom: 5px;
+  font-weight: bold;
+}
+
+.patient-details input[type='text'] {
+  width: 55%;
+  padding: 30px;
+  border-radius: 5px;
+  border: 1px solid #ddd;
+}
+
+.patient-details input[type='text'],
+.patient-details input[type='number'],
+.patient-details input[type='email'],
+.patient-details select {
+  width: 100%;
+  padding: 8px 10px;
+  margin-bottom: 20px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+
+.patient-details input[type='submit'] {
+  background-color: #3498db;
+  color: #ffffff;
+  margin-top: 20px;
+  padding: 10px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.patient-details input[type='submit']:hover {
+  background-color: #3cb0fd;
+}
+
+/* Sidebar Menu Styling */
+.sidebar {
+  width: 15%;
+  height: 100vh;
+  float: left;
+  background-color: #f1f1f1;
+  overflow-y: auto;
+}
+
+.sidebar ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.sidebar li {
+  padding: 15px;
+}
+
+.sidebar li a {
+  color: #000;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.sidebar li.active {
+  background-color: #ddd;
+}
+
+/* Responsive Styles */
+@media only screen and (max-width: 768px) {
+  .patient-details {
+    width: 100%;
+    float: none;
+  }
+
+  .sidebar {
+    width: 100%;
+    float: none;
+    height: auto;
+  }
+}
+
+.name-inputs {
+  display: flex;
+  justify-content: space-between;
+}
+
+.name-inputs label {
+  width: 22%;
+}
+
+.name-inputs input {
+  width: 45%;
+  margin-right: 5%;
+}
+
+.address-inputs {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.address-inputs label,
+.address-inputs input {
+  width: 45%;
+  margin-bottom: 10px;
+}
+
+.address-inputs label:first-child,
+.address-inputs input:first-child {
+  width: 100%;
+}
+
+#problem {
+  width: 100%;
+}
+
+#save-pdf-btn {
+  background-color: #4caf50; /* set background color to green */
+  color: white; /* set text color to white */
+  padding: 10px 20px; /* add padding to the button */
+  border: none; /* remove the button border */
+  border-radius: 5px; /* add rounded corners to the button */
+  cursor: pointer; /* add cursor pointer when hovering over the button */
+  margin-top: 20px; /* add top margin to the button */
+}

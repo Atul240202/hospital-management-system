@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Dashboard | Hospital Management System</title>
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="assets/css/dashboard-style.css"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:wght@500&display=swap"
+      rel="stylesheet"
+    />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.2.2/pdfmake.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.9.2/html2pdf.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.2.2/vfs_fonts.js"></script>
+  </head>
+  <body>
+    <header>
+      <div class="header-logo">
+        <img src="logo.png" alt="Hospital Logo" />
+      </div>
+      <div class="header-text">
+        <h1>Hospital Management System</h1>
+        <h2 class="header-tagline">Welcome to our hospital</h2>
+      </div>
+    </header>
+    <div class="dashboard-container">
+      <div class="sidebar">
+        <ul>
+          <li><a href="#">Patient</a></li>
+          <li><a href="#">Patient Detail for Doctor</a></li>
+        </ul>
+      </div>
+      <div class="patient-details">
+        <form>
+          <h2>Patient Details</h2>
+          <div class="name-inputs">
+            <label for="first-name">First Name</label>
+            <input type="text" id="first-name" name="first-name" required />
+            <label for="last-name">Last Name</label>
+            <input type="text" id="last-name" name="last-name" required />
+          </div>
+          <div class="name-inputs">
+            <label for="age">Age</label>
+            <input type="number" id="age" name="age" required />
+            <label for="gender">Gender</label>
+            <select id="gender" name="gender">
+              <option value="male">Male</option>
+              <option value="female">Female</option>
+              <option value="other">Other</option>
+            </select>
+          </div>
+          <div class="address-inputs">
+            <label for="address-1">First Line of Address</label>
+            <input type="text" id="address-1" name="address-1" required />
+            <label for="locality">Locality</label>
+            <input type="text" id="locality" name="locality" required />
+            <label for="city">City</label>
+            <input type="text" id="city" name="city" required />
+            <label for="pincode">Pincode</label>
+            <input type="text" id="pincode" name="pincode" required />
+          </div>
+          <label for="problem">What problem is the patient facing?</label>
+          <textarea id="problem" name="problem" rows="4" required></textarea>
+          <input type="submit" value="Save" />
+          <input type="button" id="save-pdf-btn" value="Save as PDF" />
+        </form>
+      </div>
+    </div>
+    <script>
+      const savePdfButton = document.getElementById('save-pdf-btn');
+      savePdfButton.addEventListener('click', () => {
+        // Get the input values from the form
+        const firstName = document.getElementById('first-name').value;
+        const lastName = document.getElementById('last-name').value;
+        const age = document.getElementById('age').value;
+        const gender = document.getElementById('gender').value;
+        const address1 = document.getElementById('address-1').value;
+        const locality = document.getElementById('locality').value;
+        const city = document.getElementById('city').value;
+        const pincode = document.getElementById('pincode').value;
+        const problem = document.getElementById('problem').value;
+
+        // Create the PDF document definition
+        const pdfDefinition = {
+          content: [
+            { text: 'Patient Details', style: 'header' },
+            { text: `Name: ${firstName} ${lastName}` },
+            { text: `Age: ${age}` },
+            { text: `Gender: ${gender}` },
+            { text: 'Address:', style: 'subheader' },
+            { text: address1 },
+            { text: locality },
+            { text: city },
+            { text: pincode },
+            { text: 'Problem:', style: 'subheader' },
+            { text: problem },
+          ],
+          styles: {
+            header: {
+              fontSize: 18,
+              bold: true,
+              margin: [0, 0, 0, 10],
+            },
+            subheader: {
+              fontSize: 14,
+              bold: true,
+              margin: [0, 10, 0, 5],
+            },
+          },
+        };
+
+        // Generate the PDF and download it
+        pdfMake.createPdf(pdfDefinition).download('patient-details.pdf');
+      });
+    </script>
+  </body>
+</html>

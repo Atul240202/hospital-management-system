@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Login | Hospital Management System</title>
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="assets/css/dashboard-style.css"
+    />
+    <!-- Firebase App (the core Firebase SDK) is always required and must be listed first -->
+    <script src="https://www.gstatic.com/firebasejs/8.6.7/firebase-app.js"></script>
+    <!-- Add Firebase products that you want to use -->
+    <script src="https://www.gstatic.com/firebasejs/8.6.7/firebase-auth.js"></script>
+  </head>
+  <body>
+    <header>
+      <div class="header-logo">
+        <img src="logo.png" alt="Hospital Logo" />
+      </div>
+      <div class="header-text">
+        <h1>Hospital Management System</h1>
+        <h2 class="header-tagline">Welcome to our hospital</h2>
+      </div>
+    </header>
+    <div class="login-container">
+      <form class="login-form">
+        <label for="email">Email ID</label>
+        <input type="email" id="email" name="email" required />
+        <label for="password">Password</label>
+        <input type="password" id="password" name="password" required />
+        <input type="submit" value="Login" />
+      </form>
+    </div>
+    <script src="assets/js/firebase-auth.js"></script>
+  </body>
+</html>
